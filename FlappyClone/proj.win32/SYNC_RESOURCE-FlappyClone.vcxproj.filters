@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\CMakeFiles\91423c5c61b240081bd1f5bd6f334e90\SYNC_RESOURCE-FlappyClone.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\CMakeFiles\SYNC_RESOURCE-FlappyClone" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A8D777AE-D005-3A96-8F36-66EEE0DEAE14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

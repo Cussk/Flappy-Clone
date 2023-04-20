@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{33A71641-3599-3313-A367-EA5967668C30}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cussk/cocos/Flappy-Clone/FlappyClone -BC:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32 --check-stamp-file C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\base\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\math\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\network\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cussk/cocos/Flappy-Clone/FlappyClone -BC:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32 --check-stamp-file C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\base\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\math\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\network\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cussk/cocos/Flappy-Clone/FlappyClone -BC:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32 --check-stamp-file C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\base\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\math\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\network\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cussk/cocos/Flappy-Clone/FlappyClone -BC:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32 --check-stamp-file C:/Users/cussk/cocos/Flappy-Clone/FlappyClone/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\base\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\math\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\network\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\ZERO_CHECK.vcxproj">
+      <Project>{E5CAE814-203F-3774-9B22-8739BBE312E1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\cocos\core\cocos2d.vcxproj">
+      <Project>{077D26E1-BD14-3878-8FCD-997CA5F10531}</Project>
+      <Name>cocos2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\clipper\ext_clipper.vcxproj">
+      <Project>{E37EE406-853D-386A-8EDE-2C6A4A61C5AB}</Project>
+      <Name>ext_clipper</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\ConvertUTF\ext_convertUTF.vcxproj">
+      <Project>{C9AA832B-CBAE-3609-81D3-4A2AB599E5F1}</Project>
+      <Name>ext_convertUTF</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\edtaa3func\ext_edtaa3func.vcxproj">
+      <Project>{DE618267-112D-3CF1-8834-17B82057C849}</Project>
+      <Name>ext_edtaa3func</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\md5\ext_md5.vcxproj">
+      <Project>{BB7A8562-77D7-35B1-B1BB-A859EBE7D4D9}</Project>
+      <Name>ext_md5</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\poly2tri\ext_poly2tri.vcxproj">
+      <Project>{B06FB5E7-A543-3B27-9AB4-B2DE35E9FA37}</Project>
+      <Name>ext_poly2tri</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\recast\ext_recast.vcxproj">
+      <Project>{6FC9F8E6-3A85-320C-BB43-A2E21F672C9C}</Project>
+      <Name>ext_recast</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\tinyxml2\ext_tinyxml2.vcxproj">
+      <Project>{10D951C2-ECBF-393F-BE91-3561D5255062}</Project>
+      <Name>ext_tinyxml2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\unzip\ext_unzip.vcxproj">
+      <Project>{274761FE-F25D-36FE-8324-EE175ABE39A9}</Project>
+      <Name>ext_unzip</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\xxhash\ext_xxhash.vcxproj">
+      <Project>{DBD5025C-A756-3E49-B222-71BDE0742525}</Project>
+      <Name>ext_xxhash</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\xxtea\ext_xxtea.vcxproj">
+      <Project>{A191D4E0-4BAC-377C-8AFB-DF02927AEAA5}</Project>
+      <Name>ext_xxtea</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\engine\external\external.vcxproj">
+      <Project>{DECE5AE9-338B-3F0C-986E-4C6E50FDFB7C}</Project>
+      <Name>external</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
