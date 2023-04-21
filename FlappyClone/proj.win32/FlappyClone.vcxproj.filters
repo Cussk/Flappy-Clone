@@ -13,6 +13,18 @@
     <ClCompile Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SplashScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOverScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainMenuScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\Classes\AppDelegate.h">
@@ -44,6 +56,21 @@
     </ClInclude>
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SplashScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Definitions.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainMenuScene.h">
+      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +133,9 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="..\Resources\Menu Button.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\Cuss.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
