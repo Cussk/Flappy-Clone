@@ -25,6 +25,9 @@
     <ClCompile Include="..\Classes\Pipe.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Ball.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\Classes\AppDelegate.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="..\Classes\Pipe.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Ball.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\CMakeLists.txt" />
@@ -105,7 +111,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Resources\Pipe.png">
+    <Image Include="..\Resources\Cuss.png">
       <Filter>Resources</Filter>
     </Image>
     <Image Include="..\Resources\Play Button Clicked.png">
@@ -123,9 +129,6 @@
     <Image Include="..\Resources\Title.png">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="..\Resources\Background.png">
-      <Filter>Resources</Filter>
-    </Image>
     <Image Include="..\Resources\Ball.png">
       <Filter>Resources</Filter>
     </Image>
@@ -135,7 +138,7 @@
     <Image Include="..\Resources\Menu Button.png">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="..\Resources\Cuss.png">
+    <Image Include="..\Resources\Pipe.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

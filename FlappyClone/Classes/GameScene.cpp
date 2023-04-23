@@ -1,5 +1,5 @@
 #include "GameScene.h"
-
+#include "GameOverScene.h"
 #include "Definitions.h"
 
 USING_NS_CC;
@@ -39,8 +39,13 @@ bool GameScene::init()
 
     this->addChild(backgroundSprite);
 
-    //creates a physics body with an edge box shape 
+    //create physics edge box for edges of screen
     auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
+
+    //define which collisions will affect the edge
+    edgeBody->setCollisionBitmask(OBSTACLE_COLLISION_BITMASK);
+    //test edge bitmask against others determining if a collsion will occur
+    edgeBody->setContactTestBitmask(true);
 
     //create a node for edge box and center it
     auto edgeNode = Node::create();
@@ -54,11 +59,41 @@ bool GameScene::init()
     //schedule pipes to spawn at designated frequency depending on the width of the game window
     this->schedule(CC_SCHEDULE_SELECTOR(GameScene::SpawnPipe), PIPE_SPAWN_FREQUENCY * visibleSize.width);
 
+    //initialize ball class in scene
+    ball = new Ball(this);
+
+    //create event listener for collisions
+    auto collisionListener = EventListenerPhysicsContact::create();
+    //create listener callback to call Contact function
+    collisionListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
+    //dispatches event call to scene
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(collisionListener, this);
+
     return true;
 }
+
 
 void GameScene::SpawnPipe(float deltaTime)
 {
     //calls Spawn Pipe function from Pipe class
     pipe.SpawnPipe(this);
+}
+
+//checks when collision occurs returns a bool
+bool GameScene::onContactBegin(cocos2d::PhysicsContact& collision)
+{
+    //get physics body for two shapes
+    PhysicsBody* a = collision.getShapeA()->getBody();
+    PhysicsBody* b = collision.getShapeB()->getBody();
+
+    //compare if ball collides with pipes or edges as either variable a or b
+    if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == b->getCollisionBitmask()) || (BALL_COLLISION_BITMASK == b->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask()))
+    {
+        //create GameOver scene
+        auto scene = GameOverScene::createScene();
+        //change to game over scene with fade transition
+        Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+    }
+
+    return true;
 }

@@ -809,6 +809,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Ball.h" />
     <ClInclude Include="..\Classes\Definitions.h" />
     <ClInclude Include="..\Classes\GameOverScene.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
@@ -818,6 +819,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\Classes\AppDelegate.h" />
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\main.h" />
     <ClInclude Include="C:\Users\cussk\cocos\Flappy-Clone\FlappyClone\proj.win32\resource.h" />
+    <ClCompile Include="..\Classes\Ball.cpp" />
     <ClCompile Include="..\Classes\GameOverScene.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\MainMenuScene.cpp" />
@@ -897,7 +899,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Resources\Background.png" />
     <Image Include="..\Resources\Ball.png" />
     <Image Include="..\Resources\Cuss.png" />
     <Image Include="..\Resources\Menu Button Clicked.png" />
