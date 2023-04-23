@@ -33,4 +33,7 @@ private:
     Pipe pipe;
 
     Ball* ball;
+
+    //score will never be negative
+    unsigned int score;
 };

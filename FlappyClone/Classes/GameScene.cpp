@@ -79,6 +79,12 @@ bool GameScene::init()
     touchListener->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
 
+    score = 0;
+
+    //calls update function
+    this->scheduleUpdate();
+
+
     return true;
 }
 
@@ -99,14 +105,21 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& collision)
     //compare if ball collides with pipes or edges as either variable a or b
     if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == b->getCollisionBitmask()) || (BALL_COLLISION_BITMASK == b->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask()))
     {
+
+        CCLOG("SCORE: %i", score);
+
         //create GameOver scene
         auto scene = GameOverScene::createScene();
         //change to game over scene with fade transition
         Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
     }
+    else if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && POINT_COLLISION_BITMASK == b->getCollisionBitmask()) || (BALL_COLLISION_BITMASK == b->getCollisionBitmask() && POINT_COLLISION_BITMASK == a->getCollisionBitmask()))
+    {
+        CCLOG("Point Scored");
 
-    //calls update function
-    this->scheduleUpdate();
+        //increment score
+        score++;
+    }
 
     return true;
 }
