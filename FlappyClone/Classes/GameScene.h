@@ -18,9 +18,14 @@ private:
     //inline function to set Physics World to local instance of it
     void SetPhysicsWorld(cocos2d::PhysicsWorld* world) { sceneWorld = world; };
 
+    void SpawnPipe(float deltaTime);
+
     bool onContactBegin(cocos2d::PhysicsContact& collision);
 
-    void SpawnPipe(float deltaTime);
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+
+    void StopFlying(float deltaTime);
+    void update(float deltaTime);
 
     //local instance of physics world
     cocos2d::PhysicsWorld* sceneWorld;

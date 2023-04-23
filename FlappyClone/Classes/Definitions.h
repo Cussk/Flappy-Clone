@@ -14,3 +14,7 @@
 //unique hex bitmask for each collision type
 #define BALL_COLLISION_BITMASK 0x000001
 #define OBSTACLE_COLLISION_BITMASK 0x000002
+
+#define BALL_FALLING_SPEED 0.0025
+#define BALL_FLYING_SPEED 0.00375
+#define BALL_FLY_DURATION 0.25

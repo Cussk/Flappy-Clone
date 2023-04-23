@@ -28,4 +28,23 @@ Ball::Ball(cocos2d::Layer* layer)
 
 	//child player sprite to layer and set z-index to make sure it is at the top of the layer
 	layer->addChild(playerBall, 100);
+
+	isFalling = true;
+}
+
+//function to change y-axis position depending on falling or not
+void Ball::Fall()
+{
+	//decrease height on screen
+	if (true == isFalling)
+	{
+		playerBall->setPositionX(visibleSize.width / 2 + origin.x);
+		playerBall->setPositionY(playerBall->getPositionY() - (BALL_FALLING_SPEED * visibleSize.height));
+	}
+	//increase height on screen
+	else
+	{
+		playerBall->setPositionX(visibleSize.width / 2 + origin.x);
+		playerBall->setPositionY(playerBall->getPositionY() + (BALL_FALLING_SPEED * visibleSize.height));
+	}
 }

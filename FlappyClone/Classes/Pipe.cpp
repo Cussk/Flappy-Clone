@@ -12,7 +12,7 @@ Pipe::Pipe()
 //function to spawn pipe layer
 void Pipe::SpawnPipe(cocos2d::Layer* layer)
 {
-	CCLOG("SPAWN PIPE");
+	//CCLOG("SPAWN PIPE");
 
 	//creates sprites for pipes
 	auto topPipe = Sprite::create("Pipe.png");
