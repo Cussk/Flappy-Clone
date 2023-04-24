@@ -29,11 +29,13 @@ bool MainMenu::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+    Vec2 centerPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
+
     //create sprite for background center in screen
     auto backgroundSprite = Sprite::create("Background.png");
-    backgroundSprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    backgroundSprite->setPosition(centerPosition);
 
-    this->addChild(backgroundSprite);
+	this->addChild(backgroundSprite);
 
     //create sprite for title center on x-axis, y-axis set to top of screen less the height of the sprite
     auto titleSprite = Sprite::create("Title.png");
@@ -43,7 +45,7 @@ bool MainMenu::init()
 
     //image for menu play button, callback to function to change scene
     auto playItem = MenuItemImage::create("Play Button.png", "Play Button Clicked.png", CC_CALLBACK_1(MainMenu::GoToGameScene, this));
-    playItem->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    playItem->setPosition(centerPosition);
 
     //image for exit button, callback to function to exit application
     auto exitItem = MenuItemImage::create("CloseNormal.png", "CloseSelected.png", CC_CALLBACK_1(MainMenu::ExitGame, this));

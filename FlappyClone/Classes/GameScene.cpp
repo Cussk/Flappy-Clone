@@ -35,9 +35,11 @@ bool GameScene::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+    Vec2 centerPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
+
     //create sprite for background center in screen
     auto backgroundSprite = Sprite::create("Background.png");
-    backgroundSprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    backgroundSprite->setPosition(centerPosition);
 
     this->addChild(backgroundSprite);
 
@@ -51,7 +53,7 @@ bool GameScene::init()
 
     //create a node for edge box and center it
     auto edgeNode = Node::create();
-    edgeNode->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    edgeNode->setPosition(centerPosition);
 
     //assign edgeBody as the physics body for node
     edgeNode->setPhysicsBody(edgeBody);
@@ -81,6 +83,17 @@ bool GameScene::init()
 
     score = 0;
 
+    //standard library string using cocos string formating to get dynamic score value
+    std::string tempScore = StringUtils::format("%d", score);
+
+    //create label for score, set font, size, color and position
+    scoreLabel = Label::createWithTTF(tempScore, "fonts/Marker Felt.ttf", visibleSize.height * SCORE_FONT_SIZE);
+    scoreLabel->setColor(Color3B::WHITE);
+    scoreLabel->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height * 0.75 + origin.y));
+
+    //add as child z-order above everything
+    this->addChild(scoreLabel, 10000);
+
     //calls update function
     this->scheduleUpdate();
 
@@ -106,19 +119,32 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& collision)
     if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == b->getCollisionBitmask()) || (BALL_COLLISION_BITMASK == b->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask()))
     {
 
-        CCLOG("SCORE: %i", score);
+        //CCLOG("SCORE: %i", score);
 
-        //create GameOver scene
-        auto scene = GameOverScene::createScene();
+        //call sound effect
+        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Hit.mp3");
+
+        //create GameOver scene with score taken from this scene
+        auto scene = GameOverScene::createScene(score);
         //change to game over scene with fade transition
         Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
     }
+    //compare if ball collides with point node as either variable a or b
     else if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && POINT_COLLISION_BITMASK == b->getCollisionBitmask()) || (BALL_COLLISION_BITMASK == b->getCollisionBitmask() && POINT_COLLISION_BITMASK == a->getCollisionBitmask()))
     {
-        CCLOG("Point Scored");
+        //CCLOG("Point Scored");
+
+        //call sound effect
+        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Point.mp3");
 
         //increment score
         score++;
+
+        //update score value for label
+        std::string tempScore = StringUtils::format("%d", score);
+
+        //set score label to new score
+        scoreLabel->setString(tempScore);
     }
 
     return true;

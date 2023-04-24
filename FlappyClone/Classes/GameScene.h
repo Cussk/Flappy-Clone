@@ -36,4 +36,6 @@ private:
 
     //score will never be negative
     unsigned int score;
+
+    cocos2d::Label* scoreLabel;
 };

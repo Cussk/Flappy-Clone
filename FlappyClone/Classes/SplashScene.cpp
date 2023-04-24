@@ -1,6 +1,7 @@
 #include "SplashScene.h"
 #include "MainMenuScene.h"
 #include "Definitions.h"
+#include "cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -25,15 +26,22 @@ bool SplashScene::init()
         return false;
     }
 
+    //initiate audio effects
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("Sounds/Hit.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("Sounds/Point.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("Sounds/Wing.mp3");
+
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    Vec2 centerPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
 
     //schedules selector to run once calling function to transition scene to main menu using delay time macro
     this->scheduleOnce(CC_SCHEDULE_SELECTOR(SplashScene::GoToMainMenuScene), DISPLAY_TIME_SPLASH_SCENE);
 
     //create and center background image
     auto backgroundSprite = Sprite::create("Cuss.png");
-    backgroundSprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    backgroundSprite->setPosition(centerPosition);
 
     //child sprite to layer
     this->addChild(backgroundSprite);
