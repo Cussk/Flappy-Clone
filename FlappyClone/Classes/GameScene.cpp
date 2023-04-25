@@ -9,7 +9,7 @@ Scene* GameScene::createScene()
     // create a scene with physics enabled
     auto scene = Scene::createWithPhysics();
     //set physics world to draw debug shapes
-    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_NONE);
     //disable gravity
 	scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
 

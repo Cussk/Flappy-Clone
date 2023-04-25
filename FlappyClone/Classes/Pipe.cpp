@@ -63,9 +63,9 @@ void Pipe::SpawnPipe(cocos2d::Layer* layer)
 	layer->addChild(topPipe);
 	layer->addChild(bottomPipe);
 
-	//move pipe sprite by move speed macro * screen size width, move across screen in negative positon x-axis, do not move in y-axis 
-	auto topPipeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, 0));
-	auto bottomPipeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, 0));
+	//move pipe sprite by move speed macro * screen size width, move across screen in negative position x-axis, move up on y-axis 
+	auto topPipeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, visibleSize.height * 0.5));
+	auto bottomPipeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, visibleSize.height *0.5));
 
 	//call the actions
 	topPipe->runAction(topPipeAction);
@@ -91,8 +91,8 @@ void Pipe::SpawnPipe(cocos2d::Layer* layer)
 	//child point nod to layer
 	layer->addChild(pointNode);
 
-	//move point node by move speed macro * screen size width, move across screen in negative position x-axis, do not move in y-axis 
-	auto pointNodeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, 0));
+	//move point node by move speed macro * screen size width, move across screen in negative position x-axis, move up on y-axis 
+	auto pointNodeAction = MoveBy::create(PIPE_MOVEMENT_SPEED * visibleSize.width, Vec2(-visibleSize.width * 1.5, visibleSize.height * 0.5));
 
 	//call action
 	pointNode->runAction(pointNodeAction);

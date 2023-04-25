@@ -25,7 +25,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //set up game window
     auto glview = director->getOpenGLView();
     if (!glview) {
-        glview = GLViewImpl::create("Find The Things");
+        glview = GLViewImpl::create("Glo");
         //glview->setFrameSize(480, 320);
         director->setOpenGLView(glview);
     }
