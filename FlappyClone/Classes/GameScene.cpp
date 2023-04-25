@@ -32,6 +32,9 @@ bool GameScene::init()
         return false;
     }
 
+    //start background music
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/backgroundMusic.mp3", true);
+
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -123,6 +126,9 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& collision)
 
         //call sound effect
         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Hit.mp3");
+
+        //stop background music
+        CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic("audio/backgroundMusic.mp3");
 
         //create GameOver scene with score taken from this scene
         auto scene = GameOverScene::createScene(score);

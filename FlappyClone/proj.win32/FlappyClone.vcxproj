@@ -911,6 +911,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="..\Resources\Title.png" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="..\Resources\audio\backgroundMusic.mp3" />
+    <Media Include="..\Resources\audio\mainmenuMusic.mp3" />
     <Media Include="..\Resources\Sounds\Hit.mp3" />
     <Media Include="..\Resources\Sounds\Point.mp3" />
     <Media Include="..\Resources\Sounds\Wing.mp3" />

@@ -109,6 +109,9 @@
     <Filter Include="Resources\Sounds">
       <UniqueIdentifier>{ed6d0318-add0-466f-9c83-7a35185cc5df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\audio">
+      <UniqueIdentifier>{b23db9d9-90a0-4449-a0b5-2b95f9bfdb3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Resources\Cuss.png">
@@ -151,6 +154,12 @@
     </Media>
     <Media Include="..\Resources\Sounds\Wing.mp3">
       <Filter>Resources\Sounds</Filter>
+    </Media>
+    <Media Include="..\Resources\audio\backgroundMusic.mp3">
+      <Filter>Resources\audio</Filter>
+    </Media>
+    <Media Include="..\Resources\audio\mainmenuMusic.mp3">
+      <Filter>Resources\audio</Filter>
     </Media>
   </ItemGroup>
 </Project>

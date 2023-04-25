@@ -26,6 +26,9 @@ bool MainMenu::init()
         return false;
     }
 
+    //start background music
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/mainmenuMusic.mp3", true);
+
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -63,6 +66,9 @@ bool MainMenu::init()
 //Transitions scene to GameScene
 void MainMenu::GoToGameScene(cocos2d::Ref* sender)
 {
+    //stop background music
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic("audio/mainmenuMusic.mp3");
+
     //create GameScene
     auto scene = GameScene::createScene();
 
