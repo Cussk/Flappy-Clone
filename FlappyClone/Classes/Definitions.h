@@ -21,7 +21,7 @@
 //movement macros
 #define BALL_FALLING_SPEED 0.0025
 #define BALL_FLYING_SPEED 0.00375
-#define BALL_FLY_DURATION 0.25
+#define BALL_FLY_DURATION 0.5
 
 //font macros
 #define SCORE_FONT_SIZE 0.1

@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "GameOverScene.h"
 #include "Definitions.h"
+#include "cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -51,7 +52,7 @@ bool GameScene::init()
 
     //define which collisions will affect the edge
     edgeBody->setCollisionBitmask(OBSTACLE_COLLISION_BITMASK);
-    //test edge bitmask against others determining if a collsion will occur
+    //test edge bitmask against others determining if a collision will occur
     edgeBody->setContactTestBitmask(true);
 
     //create a node for edge box and center it
@@ -63,8 +64,10 @@ bool GameScene::init()
 
     this->addChild(edgeNode);
 
+    auto pipeSpawnInterval = PIPE_SPAWN_FREQUENCY * visibleSize.width;
+
     //schedule pipes to spawn at designated frequency depending on the width of the game window
-    this->schedule(CC_SCHEDULE_SELECTOR(GameScene::SpawnPipe), PIPE_SPAWN_FREQUENCY * visibleSize.width);
+    this->schedule(CC_SCHEDULE_SELECTOR(GameScene::SpawnPipe), pipeSpawnInterval);
 
     //initialize ball class in scene
     ball = new Ball(this);
@@ -84,6 +87,7 @@ bool GameScene::init()
     touchListener->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
 
+
     score = 0;
 
     //standard library string using cocos string formating to get dynamic score value
@@ -99,7 +103,6 @@ bool GameScene::init()
 
     //calls update function
     this->scheduleUpdate();
-
 
     return true;
 }
@@ -159,6 +162,12 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& collision)
 //function called on touch/click of screen
 bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 {
+    //if ball is already flying return false
+    if (ball->getIsFalling() == false)
+    {
+	    return false;
+    }
+
     //calls Fly function from ball class
     ball->Fly();
 
@@ -174,8 +183,11 @@ void GameScene::StopFlying(float deltaTime)
     ball->StopFlying();
 }
 
-//calls Fall function from ball class//
+
+//call update every frame
 void GameScene::update(float deltaTime)
 {
-    ball->Fall();
+	//calls Fall function from ball class
+    ball->Fall(deltaTime);
+    
 }

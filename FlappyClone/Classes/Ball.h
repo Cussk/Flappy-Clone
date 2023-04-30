@@ -1,7 +1,6 @@
 #pragma once
 
 #include "cocos2d.h"
-#include "cocostudio/SimpleAudioEngine.h"
 
 class Ball
 {
@@ -9,10 +8,13 @@ public:
     //constructor
     Ball( cocos2d::Layer* layer);
 
-    void Fall();
+    void Fall(float deltaTime);
     //call sound effect on use
-    void Fly() { CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Wing.mp3"); isFalling = false; };
+    void Fly();;
     void StopFlying() { isFalling = true; }
+
+    bool getIsFalling() { return isFalling; }
+    
 
 private:
     cocos2d::Size visibleSize;
@@ -21,4 +23,6 @@ private:
     cocos2d::Sprite* playerBall;
 
     bool isFalling;
+
+    
 };

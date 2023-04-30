@@ -1,5 +1,6 @@
 #include "Ball.h"
 #include "Definitions.h"
+#include "cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -19,7 +20,7 @@ Ball::Ball(cocos2d::Layer* layer)
 	auto playerBallBody = PhysicsBody::createCircle(playerBall->getContentSize().width / 2);
 	//define which collisions will affect the player
 	playerBallBody->setCollisionBitmask(BALL_COLLISION_BITMASK);
-	//test player bitmask against others determining if a collsion will occur
+	//test player bitmask against others determining if a collision will occur
 	playerBallBody->setContactTestBitmask(true);
 
 
@@ -33,18 +34,27 @@ Ball::Ball(cocos2d::Layer* layer)
 }
 
 //function to change y-axis position depending on falling or not
-void Ball::Fall()
+void Ball::Fall(float deltaTime)
 {
+
 	//decrease height on screen
-	if (true == isFalling)
+	if (isFalling == true)
 	{
 		playerBall->setPositionX(visibleSize.width / 2 + origin.x);
-		playerBall->setPositionY(playerBall->getPositionY() - (BALL_FALLING_SPEED * visibleSize.height));
+		playerBall->setPositionY(playerBall->getPositionY() + (BALL_FALLING_SPEED * visibleSize.height));
 	}
 	//increase height on screen
 	else
 	{
 		playerBall->setPositionX(visibleSize.width / 2 + origin.x);
-		playerBall->setPositionY(playerBall->getPositionY() + (BALL_FALLING_SPEED * visibleSize.height));
+		playerBall->setPositionY(playerBall->getPositionY() - (BALL_FLYING_SPEED * visibleSize.height));
 	}
+}
+
+void Ball::Fly()
+{
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Wing.mp3");
+
+	isFalling = false;
+	
 }

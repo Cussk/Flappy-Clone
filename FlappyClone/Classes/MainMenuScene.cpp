@@ -2,6 +2,7 @@
 
 #include "Definitions.h"
 #include "GameScene.h"
+#include "cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 
