@@ -28,11 +28,11 @@ void Pipe::SpawnPipe(cocos2d::Layer* layer)
 	//cocos macro returns float between 0 and 1
 	auto random = CCRANDOM_0_1();
 
-	//cocos macro returns float between -1 and 1
-	auto randomMinus = CCRANDOM_MINUS1_1();
+	//returns float between -0.75 and 1
+	auto randomMinus = RandomHelper::random_real(-0.75, 1.0);
 
 	//random double between 1.0 and 4.0
-	auto randomSpeed = RandomHelper::random_real(0.4, 1.0);
+	auto randomSpeed = RandomHelper::random_real(0.5, 1.0);
 
 	//bounds to prevent pipes from spawning outside of visible window
 	if (random < LOWER_SCREEN_PIPE_THRESHOLD)
