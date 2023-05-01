@@ -6,7 +6,7 @@
 #define PIPE_SPAWN_FREQUENCY 0.004
 
 //pipe positioning macros
-#define PIPE_GAP 5	//X* the size of player sprite
+#define PIPE_GAP 6	//X* the size of player sprite
 #define UPPER_SCREEN_PIPE_THRESHOLD 0.65
 #define LOWER_SCREEN_PIPE_THRESHOLD 0.35
 
