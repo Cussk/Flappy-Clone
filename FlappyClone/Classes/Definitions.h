@@ -3,7 +3,7 @@
 //time macros
 #define DISPLAY_TIME_SPLASH_SCENE 2
 #define TRANSITION_TIME 0.5
-#define PIPE_SPAWN_FREQUENCY 0.005
+#define PIPE_SPAWN_FREQUENCY 0.004
 
 //pipe positioning macros
 #define PIPE_GAP 5	//X* the size of player sprite

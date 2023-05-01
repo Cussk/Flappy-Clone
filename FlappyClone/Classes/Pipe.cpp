@@ -31,6 +31,8 @@ void Pipe::SpawnPipe(cocos2d::Layer* layer)
 	//cocos macro returns float between -1 and 1
 	auto randomMinus = CCRANDOM_MINUS1_1();
 
+	//random double between 1.0 and 4.0
+	auto randomSpeed = RandomHelper::random_real(0.4, 1.0);
 
 	//bounds to prevent pipes from spawning outside of visible window
 	if (random < LOWER_SCREEN_PIPE_THRESHOLD)
@@ -71,8 +73,8 @@ void Pipe::SpawnPipe(cocos2d::Layer* layer)
 	layer->addChild(topPipe);
 	layer->addChild(bottomPipe);
 
-	Vec2 pipeMoveDistance(visibleSize.width * 3, visibleSize.height * randomMinus);
-	auto pipeMoveSpeed = PIPE_MOVEMENT_SPEED * visibleSize.width;
+	Vec2 pipeMoveDistance(visibleSize.width * 1.5, visibleSize.height * randomMinus);
+	auto pipeMoveSpeed = (PIPE_MOVEMENT_SPEED * visibleSize.width * randomSpeed);
 
 	//move pipe sprite by move speed macro * screen size width, move across screen in positive position x-axis, move random up or down on y-axis 
 	auto topPipeAction = MoveBy::create(pipeMoveSpeed, pipeMoveDistance);

@@ -78,7 +78,6 @@ bool GameScene::init()
     collisionListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
     //dispatches event call to scene
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(collisionListener, this);
-
     //create single touch event listener
     auto touchListener = EventListenerTouchOneByOne::create();
     //layer will prevent touches from going any layers below it
@@ -86,7 +85,6 @@ bool GameScene::init()
     //create touch listener callback to call touchbegan function on this scene
     touchListener->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-
 
     score = 0;
 

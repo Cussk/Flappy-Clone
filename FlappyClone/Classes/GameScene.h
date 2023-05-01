@@ -14,6 +14,9 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
 
+    //score will never be negative
+    unsigned int score;
+
 private:
     //inline function to set Physics World to local instance of it
     void SetPhysicsWorld(cocos2d::PhysicsWorld* world) { sceneWorld = world; };
@@ -33,9 +36,6 @@ private:
     Pipe pipe;
 
     Ball* ball;
-
-    //score will never be negative
-    unsigned int score;
 
     cocos2d::Label* scoreLabel;
 };
